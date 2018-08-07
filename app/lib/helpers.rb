@@ -39,7 +39,7 @@ end
 
 def file_push_versionbox(_path, _app)
 
-    data= %x"curl -F 'file=@#{_path}' -F app_key=#{CONFIG["APP_KEY"]} -F api_token=#{CONFIG["API_TOKEN"]} -F version_description=#{CONFIG["VERSION_DESCRIPTION"]} #{CONFIG["API_BASE"]}UploadVersion "
+    data= %x"curl -F 'file=@#{_path}' -F app_key=#{CONFIG["APP_KEY"]} -F api_token=#{CONFIG["API_TOKEN"]} -F version_description='#{CONFIG["VERSION_DESCRIPTION"]}' #{CONFIG["API_BASE"]}UploadVersion "
 
     return JSON.parse data
 end
