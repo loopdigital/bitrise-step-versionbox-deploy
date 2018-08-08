@@ -1,10 +1,16 @@
 title: |-
-  versionbox-deploy
+  VersionBox Application Deployment
 summary: |
-  Send your generated applications to VersionBox.
-description: |
-  Send your generated ipa/apk files to VersionBox, automatically upload a new version to your VersionBox application.
-  To use this step, you must have the absolute path of the IPA/APK file generated on current build. 
+  Deploy your builded application as a new version to VersionBox.io store!
+description: |-
+  VersionBox is an inHouse application store for enterprises. (https://versionbox.io)
+  You can manage, distribute and analyze your iOS or Android app from VersionBox web panel.
+
+  Use this step to entegrate your VersionBox deployment with Bitrise.
+  It will automatically deploy your generated IPA or APK file to VersionBox on build. 
+
+  All you need is an app key, and an api token from VersionBox!
+
 website: https://github.com/loopdigital/bitrise-step-versionbox-deploy
 source_code_url: https://github.com/loopdigital/bitrise-step-versionbox-deploy
 support_url: https://github.com/loopdigital/bitrise-step-versionbox-deploy/issues
@@ -27,12 +33,8 @@ is_skippable: false
 run_if: ""
 
 deps:
-  brew:
-  - name: git
-  - name: wget
-  apt_get:
-  - name: git
-  - name: wget
+
+
 
 
 toolkit:
