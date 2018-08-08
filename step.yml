@@ -6,7 +6,7 @@ description: |-
   VersionBox is an inHouse application store for enterprises. (https://versionbox.io)
   You can manage, distribute and analyze your iOS or Android app from VersionBox web panel.
 
-  Use this step to entegrate your VersionBox deployment with Bitrise.
+  Use this step to integrate your VersionBox deployment with Bitrise.
   It will automatically deploy your generated IPA or APK file to VersionBox on build. 
 
   All you need is an app key, and an api token from VersionBox!
@@ -64,7 +64,8 @@ inputs:
 
   - vb_version_description: 
     opts:
-      title: "Version description text to display on VersionBox."
+      title: "Version Description"
+      description: "Version description text to display on VersionBox."
       is_expand: true
 
   
