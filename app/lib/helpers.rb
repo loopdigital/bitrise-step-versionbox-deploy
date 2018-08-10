@@ -37,9 +37,15 @@ end
 
 
 
-def file_push_versionbox(_path, _app)
+def file_push_versionbox
 
-    data= %x"curl -F 'file=@#{_path}' -F app_key=#{CONFIG["APP_KEY"]} -F api_token=#{CONFIG["API_TOKEN"]} -F version_description='#{CONFIG["VERSION_DESCRIPTION"]}' #{CONFIG["API_BASE"]}UploadVersion "
+    mark_live=0
+    publish=0
+
+    mark_live=1 if (CONFIG["MARK_LIVE"]=="true" || CONFIG["MARK_LIVE"]=="yes")
+    publish=1   if (CONFIG["AUTO_PUBLISH"]=="true" || CONFIG["AUTO_PUBLISH"]=="yes")
+
+    data= %x"curl -F 'file=@#{CONFIG["FILE_PATH"]}' -F app_key=#{CONFIG["APP_KEY"]} -F api_token=#{CONFIG["API_TOKEN"]} -F version_description='#{CONFIG["VERSION_DESCRIPTION"]}' -F mark_live=#{mark_live} -F publish=#{publish} #{CONFIG["API_BASE"]}UploadVersion "
 
     return JSON.parse data
 end

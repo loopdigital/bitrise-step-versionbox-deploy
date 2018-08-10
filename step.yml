@@ -2,14 +2,14 @@ title: |-
   VersionBox Application Deployment
 summary: |
   Deploy your builded application as a new version to VersionBox.io store!
-description: |-
+description: |
   VersionBox is an inHouse application store for enterprises. (https://versionbox.io)
   You can manage, distribute and analyze your iOS or Android app from VersionBox web panel.
 
   Use this step to integrate your VersionBox deployment with Bitrise.
   It will automatically deploy your generated IPA or APK file to VersionBox on build. 
 
-  All you need is an app key, and an api token from VersionBox!
+  All you need is an APP KEY and an API TOKEN from VersionBox!
 
 website: https://github.com/loopdigital/bitrise-step-versionbox-deploy
 source_code_url: https://github.com/loopdigital/bitrise-step-versionbox-deploy
@@ -67,6 +67,27 @@ inputs:
       title: "Version Description"
       description: "Version description text to display on VersionBox."
       is_expand: true
+
+  - vb_mark_live: 
+    opts:
+      title: "Mark as Live"
+      description: "Mark the version as live after deployment."
+      is_expand: true
+      is_required: false
+      value_options:
+        - "yes"
+        - "no"
+  
+  - vb_auto_publish: 
+    opts:
+      title: "Publish the Version"
+      description: "Publish the version when deployment complete."
+      is_expand: true
+      is_required: false
+      value_options:
+        - "no"
+        - "yes"
+    
 
   
 

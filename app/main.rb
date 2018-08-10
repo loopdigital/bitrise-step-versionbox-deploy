@@ -22,6 +22,8 @@ CONFIG["API_TOKEN"]=ARGV[0]
 CONFIG["APP_KEY"]=ARGV[1]
 CONFIG["FILE_PATH"]=ARGV[2]
 CONFIG["VERSION_DESCRIPTION"]=ARGV[3]
+CONFIG["MARK_LIVE"]=ARGV[4]
+CONFIG["AUTO_PUBLISH"]=ARGV[5]
 
 
 
@@ -52,7 +54,7 @@ return check_status unless check_status==true
 
 
 #Upload the file
-upload=file_push_versionbox(CONFIG["FILE_PATH"], application) 
+upload=file_push_versionbox
 
 #Catch any errors on upload
 unless upload["status"]
@@ -63,7 +65,7 @@ end
 
 
 
-#Everyting is success <3
+#Everything is success <3
 p 0
 
 
