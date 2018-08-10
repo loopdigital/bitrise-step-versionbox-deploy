@@ -23,7 +23,7 @@ gem install json
 
 
 #Execute the main.rb
-e=$(ruby "${STEP_DIR}/app/main.rb" $vb_api_token $vb_app_key $vb_file_path "$vb_version_description" $vb_mark_live $vb_auto_publish)
+e=$(ruby "${STEP_DIR}/app/main.rb" $vb_api_token $vb_app_key $vb_file_path "$vb_version_description" $vb_mark_live $vb_auto_publish $vb_description_from_commit $vb_cloned_repository_path)
 
 
 

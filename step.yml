@@ -62,31 +62,54 @@ inputs:
       is_expand: true
       is_required: true
 
-  - vb_version_description: 
-    opts:
-      title: "Version Description"
-      description: "Version description text to display on VersionBox."
-      is_expand: true
-
-  - vb_mark_live: 
+  - vb_mark_live: "no"
     opts:
       title: "Mark as Live"
       description: "Mark the version as live after deployment."
+      category: Additional
       is_expand: true
       is_required: false
       value_options:
         - "yes"
         - "no"
   
-  - vb_auto_publish: 
+  - vb_auto_publish: "no"
     opts:
       title: "Publish the Version"
       description: "Publish the version when deployment complete."
       is_expand: true
       is_required: false
+      category: Additional
       value_options:
         - "no"
         - "yes"
+
+  - vb_version_description: 
+    opts:
+      title: "Version Description"
+      description: "Version description text to display on VersionBox."
+      is_expand: true
+      is_required: false
+      category: Description
+
+  - vb_description_from_commit: "no"
+    opts:
+      title: "Copy Description From Tag Commits"
+      description: "Your version description will be automatically generated from commits between last two git tags. (Generated description will overwrite the Version Description field above.)"
+      category: Description
+      is_required: false
+      is_expand: true
+      value_options:
+        - "yes"
+        - "no"
+
+  - vb_cloned_repository_path: $BITRISE_SOURCE_DIR
+    opts:
+      title: "Cloned Repository Path"
+      description: "Absolute path of the currently cloned repository on VM. (Only necessary if Description From Commits is desired.)"
+      is_expand: true
+      is_required: false
+      category: Description
     
 
   
